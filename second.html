@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- Fonction go() -->
+    <form action="">
+        <input type="text" id="monchamp">
+        <button onclick="go()">Cliquez ici</button>
+    </form>
+
+    <br>
+
+<!-- Fonction off() -->
+    <button id="a" onclick="off()">A</button>
+    <button id="b">B</button>
+
+    <br><br>
+
+<!-- Fonction relever() -->
+    Etes-vous majeur ?
+    <button id="c" onclick="relever()">OUI</button>
+    <button id="d" onclick="cacher()">NON</button> <br>
+    <button id="e" hidden="">Continuer</button>
+
+    <script>
+        // Récupérer la valeur entrée dans un champ de saisie
+        function go() {
+            let saisie = document.getElementById("monchamp");
+            alert(saisie.value);
+        }
+    </script>
+
+    <script>
+        // Désactiver un élément HTML à l'aide de JS
+        function off() {
+            // var cible = document.getElementById("a");
+            var cible = document.getElementById("b");
+            cible.setAttribute("disabled", true);
+        }
+    </script>
+
+    <script>
+        function relever() {
+            var cibles = document.getElementById("e");
+            cibles.removeAttribute("hidden");
+        }
+
+        function cacher() {
+            var cibles = document.getElementById("e");
+            cibles.setAttribute("hidden", true);
+        }
+    </script>
+
+
+</body>
+</html>
