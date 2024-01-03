@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revue js</title>
+</head>
+<body>
+<button onclick="calcul(12)">Calculer</button>
+<script>
+    // java script permet de calculer
+    var ma_variable;// declaration de variable
+    ma_variable = 5;//affectation de valeur à la variable
+    alert(ma_variable);// affichage dans une boite de dialogue ou un popup;
+    confirm("voulez-vous confirmer");//affichage d'une boite de dialogue ou popup
+    console.log(ma_variable);
+    document.write(ma_variable);
+
+    // MAnipuler les variables
+
+    let a = "bonjour";
+    let b = "à tous";
+    alert(a + b);   // Concaténation
+
+    console.log(Math.sqrt(10)); //Racine carré d'un nombre
+    console.log(Math.pow(10, 2));   // Elever un nombre au carré
+    console.log(Math.round(15.8));  //Arrondir un nombre
+    console.log(Math.PI);
+
+    const pi = Math.PI;
+
+    console.log(Math.round(pi));    // Arrondir un nombre
+    console.log(Math.max(45, 68));  // Affiche le Maximum
+
+    //Type de variables
+    let maV = "Bonne année";
+    console.log(typeof maV);    //typeof : affiche le type d'une variable
+
+    maV = Number(maV);
+    console.log(typeof maV);
+
+    //Donner des instructions en JS
+    //Les fonctions
+    function ma_fonction(a, b){
+    var calcule = a * b + 1;
+    return calcule;
+    }
+    alert(ma_fonction(12, 12));
+
+    //exemple 2
+    function ma_fonction2(a, b){
+    var calculer = a * b + 1;
+    alert(calculer);
+    }
+
+    //exemple 3
+    // function ma_fonction3(a, b){
+    //var a = prompt("entrer un nombre");
+    //var b = prompt("entrer un nombre");
+    //calcu = a * b;
+    //alert(calcu);
+    //}ma_fonction3();
+
+    function ma_fonction2(a, b) {
+        var a = prompt("entrer un nombre");
+        var b = prompt("entrer un nombre");
+        calculer = a * b;
+        alert(calculer);
+    }
+
+    ma_fonction2();
+
+    // Exemple de callback de fonction anonyme
+    setTimeout(function(){
+    alert("bonne année 2024 !");
+    }, 5000);
+    
+    // Interagir avec le HTML
+    function calcul() {
+    let d = perseInt(prompt("entrer d"));
+    alert(d + 8);
+    }
+
+    setTimeout(ma_fonction2, 4000);
+
+</script>
+</body>
+</html>
