@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // Déclarer et lire un tableau en JS
+
+    var tab =[]; // Créer un tableau sans affectation de valeur
+        tab[0]="Lundi"; // Affectation de la valeur
+
+    var tableau = [52, 25, 13]; // Créer un tableau avec affectation de valeur
+    alert(tableau[1]);
+    console.log(tableau[1]);
+
+    // Push et splice en action
+    tableau.push(12);   // Ajouter une valeur
+    tableau.splice(1,1);
+
+    alert(tableau);
+    console.log(tableau);
+
+    /*
+    L'ajout et la suppression d'éléments dans un tableau passent par l'utilisation de deux méthodes : push et splice.
+    La première, push, permet d'ajouter à la fin du tableau une valeur qui lui est passée en paramètre.
+    La seconde, splice, permet de retirer des éléments. Elle est un peu plus complexe et nécessite deux paramètres :
+    - l'index de l'élément à partir duquel la méthode sera lancée
+    - le nombre d'élements qu'elle devra effacer
+    */
+</script>
+
+</body>
+</html>
