@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boucles</title>
+</head>
+<body>
+<script>
+    /*
+        Répétition d'instructions avec une boucle
+
+    Si les tableaux permettent de stocker un ensemble de valeurs, les boucles permettent la répétition d'une instruction ou d'un bloc d'instructions pour un nombre fini (ou infini) de fois. Les deux sont fréquemment utilisés ensemble.
+    A l'instar des conditions, les boucles ne sont pas des objets mais des structures qui font intervenir des objets.
+    Elles contiennent trois éléments logiques : elles sont d'abord initialisées puis la condition de répétition est précisée. Tant que cette condition est valide, un bloc de code est exécuté.
+    */
+
+
+    // Une boucle simple
+
+    document.write("Affiche 100 chiffres de 0 à 99");
+    for(i=0; i<100; i++) {
+        document.write("<p> " + i + "</p>");
+    }   // Affiche 100 chiffres de 0 à 99
+
+    document.write("<hr />")
+
+    document.write("Affiche 100 chiffres de 1 à 100");
+    for(i=1; i<=100; i++) {
+        document.write("<p> " + i + "</p>");
+    }   // Affiche 100 chiffres de 1 à 100
+
+    document.write("<hr />")
+</script>
+
+
+<script>
+    // Remplir un tableau avec mille valeurs aléatoires
+    document.write("Affiche 100 chiffres aléatoires <br><br>");
+    let tab = [];
+    for(i=0; i<100; i++) {
+        tab[i]= Math.random();
+        document.write(tab[i], "<br>");    // On peut mettre + ou , pour ajouter (ici ajout de <br> pour que chaque valeur revienne à la ligne les unes après les autres)
+        console.log(tab[i]);
+    }
+
+    document.write("<hr />")
+</script>
+
+
+<script>
+    // Une boucle avec do et while
+    i=0;
+    do {
+        document.write("<h3>" + i + "</3>");
+        i++;
+    } while (i<5);
+</script>
+</body>
+</html>
