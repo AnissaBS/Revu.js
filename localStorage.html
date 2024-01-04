@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        L'objet localstorage
+
+        Les cookies ont été initialement conçus pour être transmis entre un client et un serveur. Ils ne se révèlent pas adaptés pour stocker et exploiter des informations côté client.
+        Ainsi, la limitation de taille de 4ko est très pratique pour éviter que les enquêtes qui continennent les cookies soient trop volumineux mais limite les possibilités de stockage.
+        HTML5 introduit une véritable manière de stocker l'information côté client : le localstorage. Ce dernier est un espace de stockage qui est associé à un domaine et qui est géré par le navigaeur. Sa taille dépend de ce dernier et est d'au moins 5MO, ce qui est assez consistant.
+        Contrairement aux cookies, le localstorage n'est pas destiné à être envoyé ver le serveur. Les seuls inconvénient du localstorage restant son incompatibilité avec les clients et appareils les plus anciens et sa dépendance au JavaScript.
+
+        Le localstorage s'apparente à une base de données cléf-valeur. Sa manipulation en JS est plus sophistiquée et offre davantage de fonctionnalités qu'un stockage d'informations dans un cookie.
+        Le localstorage se manipule grâce à l'objet JavaScript du même nom.
+    -->
+
+    <script>
+        var date= new Date();
+        // La méthode setItem permet de stocker une paire de clef-valeur dans le localstorage
+        var visite = localStorage.setItem("date", date.toString());
+
+        // La méthode getItem permet de trouver la valeur associé à une clef
+        var i = Number(localStorage.getItem("compteur"));
+        if( i=== null) {
+            i = 0;
+        } else {
+            i++;
+        }
+
+        localStorage.setItem("compteur", i);
+
+        document.write("<h2> Vous avez visité cette page " + i + " fois </h2>");
+        document.write("La dernière visite datant du : " + date);
+
+        /*
+        A la différence d'un cookie, il est possible de stocker des informations complexes dans le localstorage, a l'instar d'un objet...
+        Pour ce faire, il sera nécessaire de d'abord le convertir en une chaîne de texte à l'aide de la méthode JSON.stringify() pour pouvoir l'enregistrer.
+        Puis, pour le lire, il faut procéder à l'opération inverse à l'aide de la méthode JSON.parse(), qui permet de convertir une chaîne de caractères en un objet.
+        */
+    </script>
+    <script>
+        /*
+        Il est possible de stocker tout type d'information dans le localStorage, y compris des objets.
+        Il faut dans ce cas effectuer une conversion avant d'écrire ou de lire l'information.
+        */
+
+        var eleve = {
+            prenom : "Amina",
+            mail : "amina@gmail.com",
+            moyenne : 18
+        };
+
+        // Conversion de l'objet en texte
+        localStorage.setItem("obj", JSON.stringify(eleve));
+
+        var text = localStorage.getItem("obj");
+
+        // Conversion du texte stocké en objet
+        texte = JSON.parse(text);
+        alert(texte.mail);
+        console.log(texte.mail);
+    </script>    
+</body>
+</html>
